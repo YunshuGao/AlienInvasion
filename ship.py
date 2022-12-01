@@ -17,10 +17,13 @@ class Ship:
 
         #Movement flag
         self.moving_right=False
+        self.moving_left=False
 
     def update(self):
         if self.moving_right:
             self.ship_rect.x+=1
+        if self.moving_left:
+            self.ship_rect.x-=1
 
 
     def blitme(self):
