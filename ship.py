@@ -1,7 +1,10 @@
 import pygame
 
+
 class Ship:
-    """A class to manage the ship."""
+    """A class to manage the ship.
+    The Ship class controls all attributes of the ship
+    """
 
     def __init__(self,ai_game):
         """Initialize the ship and set its starting position."""
@@ -11,6 +14,14 @@ class Ship:
         self.ship_image=pygame.image.load('images/ship.bmp')
         self.ship_rect=self.ship_image.get_rect()
         self.ship_rect.midbottom=self.screen_rect.midbottom
+
+        #Movement flag
+        self.moving_right=False
+
+    def update(self):
+        if self.moving_right:
+            self.ship_rect.x+=1
+
 
     def blitme(self):
         self.screen.blit(self.ship_image,self.ship_rect)
