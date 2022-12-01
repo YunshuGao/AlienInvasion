@@ -4,15 +4,15 @@ from settings import Settings
 from ship import Ship
 
 class AlienInvasion:
-    """Over class to manage game assets and behavior"""
+    """Overall class to manage game assets and behavior"""
 
     def __init__(self):
         """initial the game, and create game resources."""
         pygame.init()
         self.settings=Settings()
-        self.ship=Ship(self)
         self.screen=pygame.display.set_mode((self.settings.screen_width,self.settings.screen_height))
         pygame.display.set_caption("Alien Invasion")
+        self.ship = Ship(self)
 
 
 
